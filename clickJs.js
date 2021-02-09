@@ -28,7 +28,9 @@
               setTimeout (function (){
                   canStart = 1;
                   clicks = 0;
-                  
+                  cnt.innerHTML = "";
+                  cnt.innerHTML = "0";
+                  but.style.background = "lightblue";
               }, 1500);
            }, 5000);
        } else if(isStarted && !canStart ) clicks++;
