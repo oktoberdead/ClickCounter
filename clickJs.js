@@ -3,11 +3,11 @@
     let cnt = document.getElementById("count");
 	let tim = document.getElementById("tm");
 	let cps = document.getElementById("persec");
-
+	let resT = document.getElementById("resTable");
 	let r, g, b, a;
 
 	let timeLeft;
-
+	let clickspersec;
 function rand(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -17,25 +17,51 @@ function rand(min, max) {
 	let words = ["Yeah!", "Like that!", "Ooh!", "Jeez..", "Come on!", "Fantastic!", "Cool!", "Nice!", "Woah!", "Much fast!","Very speed!", "So quick!"];
 
     but.style.left = (window.innerWidth-300)/2 + "px";
-    but.style.top = (window.innerHeight-60)/2 + "px";
+    but.style.top = (window.innerHeight-160)/2 + "px";
     
 
     cnt.style.left = (window.innerWidth-60)/2 + "px";
-    cnt.style.top = (window.innerHeight+62)/2 +  "px";
+    cnt.style.top = (window.innerHeight-38)/2 +  "px";
 
     tim.style.left = (window.innerWidth-25)/2 + "px";
-    tim.style.top = (window.innerHeight-102)/2 +  "px";
+    tim.style.top = (window.innerHeight-202)/2 +  "px";
 
-    cps.style.left = (window.innerWidth-110)/2 + "px";
-    cps.style.top = (window.innerHeight+126)/2 +  "px";    
+    cps.style.left = (window.innerWidth-120)/2 + "px";
+    cps.style.top = (window.innerHeight+26)/2 +  "px";    
+
+
+    resT.style.left = (window.innerWidth-120)/2 + "px";
+    resT.style.top = (window.innerHeight+69)/2 +  "px";    
   
    let clicks = 0; 
    
    let canStart = 1;
    let isStarted = 0;
    
+   let res = [];
+   let temp;
+   let n = 0;
+   for(let i = 0; i < 15; i++){
+   	temp = document.createElement("div");
+   	if(i%3!=0){
+   	 temp.id = "result" + n;
+   	 res[n] = temp;
+   	 n++;
+   	} else temp.innerHTML = i/3 + 1;
+   	temp.style.border = "1px solid gray";
+   	resT.append(temp);
+
+   }
+
+
+
+
+
+
+
    but.onclick = function(){
        if(canStart && !isStarted){
+       	clickspersec = 0;
  			a = 1;
  			r = 0; b = 0; g = 255;
            canStart = 0;
@@ -48,12 +74,24 @@ function rand(min, max) {
            setTimeout(function (){
            
            isStarted = 0;
-           tim.innerHTML = "";
+           tim.innerHTML = "0";
             a = 1;
  			r = 255; b = 0; g = 0;
            but.style.background = "rgba(" + r + "," + g + "," + b + "," + a + ")";
-           but.innerHTML = "Wait a bit";
+           but.innerHTML = "Wait a bit..";
+           clickspersec = (clicks/5).toFixed(1);
+			cps.innerHTML = "Per second: " + clickspersec;
               setTimeout (function (){
+              	tim.innerHTML = "?";
+
+
+for(let i = 9; i > 1; i--){
+	res[i].innerHTML = res[i-2].innerHTML;
+
+}
+res[0].innerHTML = clicks;
+res[1].innerHTML = clickspersec;
+
                   canStart = 1;
                   clicks = 0;
                   cnt.innerHTML = "";
@@ -93,7 +131,8 @@ function timer(){
 	if(isStarted){
 		timeLeft--;
 		tim.innerHTML = timeLeft/10;
-		cps.innerHTML = "Per second: " + (clicks/(5-timeLeft/10)).toFixed(1);
+		clickspersec = (clicks/(5-timeLeft/10)).toFixed(1)
+		cps.innerHTML = "Per second: " + clickspersec;
 		setTimeout(timer, 100);
 	}
 }
