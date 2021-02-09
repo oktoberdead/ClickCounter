@@ -45,6 +45,7 @@ but.onmousedown = function(){
 }
 
 but.onmouseup = function(){
+	if(canStart || isStarted)
 	dim.style.opacity = 0;
 }
 
