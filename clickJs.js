@@ -87,6 +87,7 @@ function rand(min, max) {
 }
 res[0].innerHTML = clicks;
 res[1].innerHTML = clickspersec;
+		   if(clicks > 76) alert("You freaking donkey, don't you dare!");
               setTimeout (function (){
               	tim.innerHTML = "?";
 
