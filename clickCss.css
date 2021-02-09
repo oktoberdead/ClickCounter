@@ -6,6 +6,7 @@
 	font-size:50px;
 	color:white;
 	text-align:center;
+	border: dashed gray 1px;
 	
 }
 
@@ -27,6 +28,14 @@
     opacity: 0;
 }
 
+#tm{
+	height: 20px;
+	width: 25px;
+	border: 1px gray solid;
+	font-size: 17px;
+	position: fixed;
+	text-align: center;
+}
 
 * {
     
