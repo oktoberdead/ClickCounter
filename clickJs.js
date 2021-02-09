@@ -1,8 +1,11 @@
 	let date = new Date();
     let but = document.getElementById("button");
     let cnt = document.getElementById("count");
-    let dim = document.getElementById("dimmer");
 	let tim = document.getElementById("tm");
+	let cps = document.getElementById("persec");
+
+	let r, g, b, a;
+
 	let timeLeft;
 
 function rand(min, max) {
@@ -22,6 +25,9 @@ function rand(min, max) {
 
     tim.style.left = (window.innerWidth-25)/2 + "px";
     tim.style.top = (window.innerHeight-102)/2 +  "px";
+
+    cps.style.left = (window.innerWidth-100)/2 + "px";
+    cps.style.top = (window.innerHeight+126)/2 +  "px";    
   
    let clicks = 0; 
    
@@ -30,26 +36,31 @@ function rand(min, max) {
    
    but.onclick = function(){
        if(canStart && !isStarted){
- 
+ 			a = 1;
+ 			r = 0; b = 0; g = 255;
            canStart = 0;
            isStarted = 1;
            timeLeft = 50;
            clicks++;
            timer();
            but.innerHTML = words[rand(0, 11)];
-           but.style.background = "lime";
+           but.style.background = "rgba(" + r + "," + g + "," + b + "," + a + ")";
            setTimeout(function (){
            
            isStarted = 0;
            tim.innerHTML = "";
-           but.style.background = "red";
+            a = 1;
+ 			r = 255; b = 0; g = 0;
+           but.style.background = "rgba(" + r + "," + g + "," + b + "," + a + ")";
            but.innerHTML = "Wait a bit";
               setTimeout (function (){
                   canStart = 1;
                   clicks = 0;
                   cnt.innerHTML = "";
                   cnt.innerHTML = "0";
-                  but.style.background = "lightblue";
+                   	a = 1;
+ 					r = 173; g = 216; b = 230; 
+                  but.style.background = "rgba(" + r + "," + g + "," + b + "," + a + ")";
                   but.innerHTML = "Click me!";
               }, 1500);
            }, 5000);
@@ -64,12 +75,15 @@ function rand(min, max) {
    
 but.onmousedown = function(){
 	if(canStart || isStarted)
-	dim.style.opacity = 0.3;
+		a = 0.5;
+		 but.style.background = "rgba(" + r + "," + g + "," + b + "," + a + ")";
+
 }
 
 but.onmouseup = function(){
 		
-	dim.style.opacity = 0;
+		a = 1;
+		 but.style.background = "rgba(" + r + "," + g + "," + b + "," + a + ")";
 
 }
 
@@ -78,6 +92,7 @@ function timer(){
 	if(isStarted){
 		timeLeft--;
 		tim.innerHTML = timeLeft/10;
+		cps.innerHTML = "Per second: " + (clicks/(5-timeLeft/10)).toFixed(1);
 		setTimeout(timer, 100);
 	}
 }

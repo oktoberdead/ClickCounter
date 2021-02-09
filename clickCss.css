@@ -7,6 +7,7 @@
 	color:white;
 	text-align:center;
 	border: dashed gray 1px;
+	transition: 0.1s;
 	
 }
 
@@ -20,13 +21,6 @@
     
 }
 
-#dimmer{
-	position:fixed;
-    height:60px;
-    width:300px;
-    background-color: gray;
-    opacity: 0;
-}
 
 #tm{
 	height: 20px;
@@ -52,4 +46,13 @@
 	width: 120px;
 	color: gray;
 	font-size: 17px; 
+}
+
+#persec{
+	position: fixed;
+	border: 2px solid black;
+	height: 20px;
+	width: 100px;
+	text-align: center;
+
 }
