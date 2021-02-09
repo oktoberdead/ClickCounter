@@ -81,16 +81,17 @@ function rand(min, max) {
            but.innerHTML = "Wait a bit..";
            clickspersec = (clicks/5).toFixed(1);
 			cps.innerHTML = "Per second: " + clickspersec;
-              setTimeout (function (){
-              	tim.innerHTML = "?";
-
-
-for(let i = 9; i > 1; i--){
+		   for(let i = 9; i > 1; i--){
 	res[i].innerHTML = res[i-2].innerHTML;
 
 }
 res[0].innerHTML = clicks;
 res[1].innerHTML = clickspersec;
+              setTimeout (function (){
+              	tim.innerHTML = "?";
+
+
+
 
                   canStart = 1;
                   clicks = 0;
