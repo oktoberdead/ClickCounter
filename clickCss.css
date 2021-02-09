@@ -1,0 +1,36 @@
+#button{
+    position:fixed;
+    height:75px;
+    width:200px;
+    background-color:red;
+    font-size:70px;
+    color:white;
+    text-align:center;
+}
+
+#count{
+    position:fixed;
+    height:30px;
+    width:60px;
+    border: 2px solid;
+    text-align:center;
+    font-size: 26px;
+    
+}
+
+#dimmer{
+	position:fixed;
+    height:75px;
+    width:200px;
+    background-color: gray;
+    opacity: 0;
+}
+
+
+* {
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
