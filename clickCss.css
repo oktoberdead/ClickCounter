@@ -11,6 +11,10 @@
 	
 }
 
+.disable-dbl-tap-zoom {
+  touch-action: manipulation;
+}
+
 #count{
     position:fixed;
     height:30px;
@@ -31,10 +35,6 @@
 	text-align: center;
 }
 
-.disable-dbl-tap-zoom {
-  touch-action: manipulation;
-}
-
 * {
     
     -webkit-user-select:none;
@@ -47,7 +47,7 @@
 	top:10px;
 	left: 10px;
 	height: 20px;
-	width: 120px;
+	width: 200px;
 	color: gray;
 	font-size: 17px; 
 }
