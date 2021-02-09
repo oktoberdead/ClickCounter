@@ -11,6 +11,7 @@
 #h1, #h2, #h3{
 	border: 1px solid gray;
 	font-size: 18px;
+	
 }
 
 
@@ -28,9 +29,7 @@
 	text-shadow: 1px 1px 1px black, 0 0 3px black;
 }
 
-.disable-dbl-tap-zoom {
-  touch-action: manipulation;
-}
+
 
 #count{
     position:fixed;

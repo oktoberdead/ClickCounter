@@ -1,4 +1,9 @@
-	let date = new Date();
+$('.no-zoom').bind('touchend', function(e) {
+  e.preventDefault();
+  // Add your code here. 
+  $(this).click();
+  // This line still calls the standard click event, in case the user needs to interact with the element that is being clicked on, but still avoids zooming in cases of double clicking.
+})
     let but = document.getElementById("button");
     let cnt = document.getElementById("count");
 	let tim = document.getElementById("tm");
@@ -81,16 +86,16 @@ function rand(min, max) {
            but.innerHTML = "Wait a bit..";
            clickspersec = (clicks/5).toFixed(1);
 			cps.innerHTML = "Per second: " + clickspersec;
-		   for(let i = 9; i > 1; i--){
+			for(let i = 9; i > 1; i--){
 	res[i].innerHTML = res[i-2].innerHTML;
 
 }
 res[0].innerHTML = clicks;
 res[1].innerHTML = clickspersec;
-		   if(clicks > 76) alert("You freaking donkey, don't you dare!");
+if(clicks > 76) alert("You freaking donkey, don't you dare!");
+
               setTimeout (function (){
               	tim.innerHTML = "?";
-
 
 
 
