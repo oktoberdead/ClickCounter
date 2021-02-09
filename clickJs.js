@@ -26,7 +26,7 @@ function rand(min, max) {
     tim.style.left = (window.innerWidth-25)/2 + "px";
     tim.style.top = (window.innerHeight-102)/2 +  "px";
 
-    cps.style.left = (window.innerWidth-100)/2 + "px";
+    cps.style.left = (window.innerWidth-110)/2 + "px";
     cps.style.top = (window.innerHeight+126)/2 +  "px";    
   
    let clicks = 0; 
@@ -58,6 +58,7 @@ function rand(min, max) {
                   clicks = 0;
                   cnt.innerHTML = "";
                   cnt.innerHTML = "0";
+                  cps.innerHTML = "Per second: ?";
                    	a = 1;
  					r = 173; g = 216; b = 230; 
                   but.style.background = "rgba(" + r + "," + g + "," + b + "," + a + ")";
