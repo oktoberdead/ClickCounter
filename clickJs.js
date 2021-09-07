@@ -26,12 +26,12 @@ function rand(min, max) {
     tim.style.left = (window.innerWidth-25)/2 + "px";
     tim.style.top = (window.innerHeight-202)/2 +  "px";
 
-    cps.style.left = (window.innerWidth-120)/2 + "px";
-    cps.style.top = (window.innerHeight+26)/2 +  "px";    
+    cps.style.left = (window.innerWidth-140)/2 + "px";
+    cps.style.top = (window.innerHeight+27)/2 +  "px";    
 
 
-    resT.style.left = (window.innerWidth-120)/2 + "px";
-    resT.style.top = (window.innerHeight+69)/2 +  "px";    
+    resT.style.left = (window.innerWidth-140)/2 + "px";
+    resT.style.top = (window.innerHeight+70)/2 +  "px";    
   
    let clicks = 0; 
    
