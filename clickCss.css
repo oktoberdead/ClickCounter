@@ -1,7 +1,7 @@
 
 #resTable{
 	display: grid;
-	grid-template-columns: 20px 50px 50px;
+	grid-template-columns: 20px 60px 60px;
 	grid-template-rows: 25px repeat(5, 30px);
 	position: fixed;
 	font-size: 25px;
@@ -73,7 +73,7 @@
 	position: fixed;
 	border: 2px solid black;
 	height: 20px;
-	width: 120px;
+	width: 140px;
 	text-align: center;
 
 }
