@@ -16,6 +16,48 @@
 }
 
 
+#keyBlock{
+
+	display: grid;
+	grid-template-rows: 25px;
+	grid-template-columns: 100px 100px;
+	position: fixed;
+	font-size: 20px;
+	text-align: center;
+	color: gray;
+
+}
+
+#chosenKey {
+	color:  orange;
+}
+
+
+
+#keyInfo {
+	position: fixed;
+	font-size:  20px;
+	color: gray;
+	height: 20px;
+	width:  460px;
+	text-align: center;
+	transition:  0.2s;
+}
+#keySelect {
+	position: fixed;
+	font-size: 15px;
+
+	color:  white;
+	text-shadow: 1px 1px 1px black, 0 0 2px black;
+	width: 210px;
+	height: 20px;
+	text-align: center;	
+	background-color:  #c662ff;
+	border: outset #9815b3 2px;
+	border-radius:20px;
+	transition:  0.3s;
+}
+ 
 
 #button{
     position:fixed;
