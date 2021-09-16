@@ -25,11 +25,13 @@
 	font-size: 20px;
 	text-align: center;
 	color: gray;
-
+top:25px;
 }
 
 #chosenKey {
 	color:  orange;
+position:fixed;
+top:25px;
 }
 
 
